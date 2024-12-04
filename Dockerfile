@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.10
  
 LABEL summary="SMFC ACTIVITY CONTAINER" \
     name="gale-smfc-activity" \
