@@ -37,9 +37,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt $APP_HOME/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
  
-# Copy the application code
-COPY . $APP_HOME
- 
+# Copy specific application files and directories
+COPY application/server/config/ $APP_HOME/config/
+COPY application/server/script/ $APP_HOME/script/
+COPY application/server/app.py $APP_HOME/app.py
+
 # Ensure scripts have the correct permissions
 RUN ["chmod", "+x", "/application/server/script/entrypoint.sh"]
  
