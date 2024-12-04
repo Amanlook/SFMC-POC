@@ -1,0 +1,22 @@
+*.pyc
+.idea/
+env/
+env3/
+venv/
+venv3/
+db.sqlite3
+.env
+
+*.log
+**/.DS_Store
+*.sh
+id_rsa
+id_rsa.pub
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.vscode/
+dummy
+server/static/
