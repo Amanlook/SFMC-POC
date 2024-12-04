@@ -9,7 +9,6 @@ db.sqlite3
 
 *.log
 **/.DS_Store
-*.sh
 id_rsa
 id_rsa.pub
 # Byte-compiled / optimized / DLL files
