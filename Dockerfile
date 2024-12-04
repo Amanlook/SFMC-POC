@@ -38,9 +38,9 @@ COPY requirements.txt $APP_HOME/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
  
 # Copy specific application files and directories
-COPY application/server/config/ $APP_HOME/config/
-COPY application/server/script/ $APP_HOME/script/
-COPY application/server/app.py $APP_HOME/app.py
+COPY server/config/ $APP_HOME/config/
+COPY server/script/ $APP_HOME/script/
+COPY server/app.py $APP_HOME/app.py
 
 # Ensure scripts have the correct permissions
 RUN ["chmod", "+x", "/application/server/script/entrypoint.sh"]
