@@ -7,8 +7,8 @@ services:
     working_dir: /application/server
     env_file:
       - .env
-    command: "tail -f /dev/null"
-    #     command: ["python", "manage.py", "runserver", "0:9001"]
+    # command: "tail -f /dev/null"
+    command: ["flask", "run", "--host=0.0.0.0", "--port=8000"]
     volumes:
       - .:/application
       - app-python-site-packages:/usr/local/lib/python3.8/site-packages
