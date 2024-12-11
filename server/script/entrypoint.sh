@@ -58,9 +58,9 @@ elif [ -z "$cmd" ]; then
     if [ "$DEBUG" == False ]; then
       echo >&2 "DEBUG is set to False."
       if [ "$USE_APP_SERVER" == "gunicorn" ]; then
-        gunicorn config.wsgi --timeout 120 --keep-alive 120 -w 2 -b 0.0.0.0:8000 --chdir=$APP_HOME/server --access-logfile=-
+        gunicorn config.wsgi --timeout 120 --keep-alive 120 -w 2 -b 0.0.0.0:8001 --chdir=$APP_HOME/server --access-logfile=-
       elif [ "$USE_APP_SERVER" == "uwsgi" ]; then
-        uwsgi --http :8000 --chdir=$APP_HOME/server --wsgi-file config/wsgi.py --harakiri 120 --http-timeout 120 --master --workers 3 --enable-threads --threads 10 --vacuum
+        uwsgi --http :8001 --chdir=$APP_HOME/server --wsgi-file config/wsgi.py --harakiri 120 --http-timeout 120 --master --workers 3 --enable-threads --threads 10 --vacuum
       else
         echo "An invalid application server command was specified. Exiting the container in 5s."
         sleep 5
@@ -71,9 +71,9 @@ elif [ -z "$cmd" ]; then
       # Uncomment in case local requirements are to be added
       # pip install -r $APP_HOME/requirements/local.txt
       if [ "$USE_APP_SERVER" == "gunicorn" ]; then
-        gunicorn config.wsgi --timeout 120 --keep-alive 120 -w 2 -b 0.0.0.0:8000 --chdir=$APP_HOME/server --access-logfile=-
+        gunicorn config.wsgi --timeout 120 --keep-alive 120 -w 2 -b 0.0.0.0:8001 --chdir=$APP_HOME/server --access-logfile=-
       elif [ "$USE_APP_SERVER" == "uwsgi" ]; then
-        uwsgi --http :8000 --chdir=$APP_HOME/server --wsgi-file config/wsgi.py --harakiri 120 --http-timeout 120 --master --workers 3 --enable-threads --threads 10 --vacuum
+        uwsgi --http :8001 --chdir=$APP_HOME/server --wsgi-file config/wsgi.py --harakiri 120 --http-timeout 120 --master --workers 3 --enable-threads --threads 10 --vacuum
       else
         echo "An invalid application server command was specified. Exiting the container in 5s."
         sleep 5
@@ -87,9 +87,9 @@ elif [ -z "$cmd" ]; then
     if [ "$DEBUG" == False ]; then
       echo >&2 "DEBUG is set to False."
       if [ "$USE_APP_SERVER" == "gunicorn" ]; then
-        gunicorn config.wsgi --timeout 120 --keep-alive 120 -w 2 -b 0.0.0.0:8000 --chdir=$APP_HOME/server --access-logfile=-
+        gunicorn config.wsgi --timeout 120 --keep-alive 120 -w 2 -b 0.0.0.0:8001 --chdir=$APP_HOME/server --access-logfile=-
       elif [ "$USE_APP_SERVER" == "uwsgi" ]; then
-        uwsgi --http :8000 --chdir=$APP_HOME/server --wsgi-file config/wsgi.py --master --workers 3 --enable-threads --threads 10 --vacuum
+        uwsgi --http :8001 --chdir=$APP_HOME/server --wsgi-file config/wsgi.py --master --workers 3 --enable-threads --threads 10 --vacuum
       else
         echo "An invalid application server command was specified. Exiting the container in 5s."
         sleep 5
@@ -100,9 +100,9 @@ elif [ -z "$cmd" ]; then
       # Uncomment in case local requirements are to be added
       # pip install -r $APP_HOME/requirements/local.txt
       if [ "$USE_APP_SERVER" == "gunicorn" ]; then
-        gunicorn config.wsgi --timeout 120 --keep-alive 120 -w 2 -b 0.0.0.0:8000 --chdir=$APP_HOME/server --access-logfile=-
+        gunicorn config.wsgi --timeout 120 --keep-alive 120 -w 2 -b 0.0.0.0:8001 --chdir=$APP_HOME/server --access-logfile=-
       elif [ "$USE_APP_SERVER" == "uwsgi" ]; then
-        uwsgi --http :8000 --chdir=$APP_HOME/server --wsgi-file config/wsgi.py --harakiri 120 --http-timeout 120 --master --workers 3 --enable-threads --threads 10 --vacuum
+        uwsgi --http :8001 --chdir=$APP_HOME/server --wsgi-file config/wsgi.py --harakiri 120 --http-timeout 120 --master --workers 3 --enable-threads --threads 10 --vacuum
       else
         echo "An invalid application server command was specified. Exiting the container in 5s."
         sleep 5

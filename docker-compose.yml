@@ -8,14 +8,14 @@ services:
     env_file:
       - .env
     # command: "tail -f /dev/null"
-    command: ["flask", "run", "--host=0.0.0.0", "--port=8000"]
+    command: ["flask", "run", "--host=0.0.0.0", "--port=8001"]
     volumes:
       - .:/application
       - app-python-site-packages:/usr/local/lib/python3.8/site-packages
       - app-usr-local-bin:/usr/local/bin
       - ~/.ssh:/root/.ssh 
     ports:
-      - "8000:8000"
+      - "8001:8001"
 
 
 volumes:
