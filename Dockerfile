@@ -27,10 +27,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-utils \
     build-essential \
     gcc \
-    vim \
     libpq-dev \
     python3-dev \
     python3-psycopg2 \
+    vim \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
  
 # Install Python dependencies
@@ -41,12 +41,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY server/config/ $APP_HOME/config/
 COPY server/script/ $APP_HOME/script/
 COPY server/app.py $APP_HOME/app.py
-
-# Ensure scripts have the correct permissions
-RUN ["chmod", "+x", "/application/server/script/entrypoint.sh"]
  
 # Expose the Flask app port
 EXPOSE 5000
- 
-# Default entrypoint command to run the Flask app
-ENTRYPOINT ["/application/server/script/entrypoint.sh"]

@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class DjangoChoiceEnum(Enum):
+class FlaskChoiceEnum(Enum):
     @classmethod
     def choices(cls):
         return tuple((i.value, i.name) for i in cls)
